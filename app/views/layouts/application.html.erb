@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RailsSetup</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+    <%= hotwire_livereload_tags if Rails.env.development? %>
+  </head>
+
+  <body>
+    
+    
+    <div class="rubick px-5 sm:px-8 py-5 before:content-[''] before:bg-gradient-to-b before:from-theme-1 before:to-theme-2 dark:before:from-darkmode-800 dark:before:to-darkmode-800 before:fixed before:inset-0 before:z-[-1]">
+        <!-- BEGIN: Mobile Menu -->
+        <%= render 'components/mobile_menu/mobile_menu'%>
+        <!-- END: Mobile Menu -->
+        <div class="mt-[4.7rem] flex md:mt-0">
+            <!-- BEGIN: Side Menu -->
+           <%= render 'components/sidebar/sidebar'%>
+            <!-- END: Side Menu -->
+            <!-- BEGIN: Content -->
+            <div class="md:max-w-auto min-h-screen min-w-0 max-w-full flex-1 rounded-[30px] bg-slate-100 px-4 pb-10 before:block before:h-px before:w-full before:content-[''] dark:bg-darkmode-700 md:px-[22px]">
+                <%= render 'components/header/header'%>
+                <%= yield %>
+            </div>
+            <!-- END: Content -->
+        </div>
+    </div>
+    <!-- BEGIN: Vendor JS Assets-->
+    <%= javascript_include_tag 'vendors/dom.js' %>
+    <%= javascript_include_tag 'vendors/tailwind-merge.js' %>
+    <%= javascript_include_tag 'vendors/lucide.js' %>
+    <%= javascript_include_tag 'vendors/alert.js' %>
+    <%= javascript_include_tag 'vendors/tippy.js' %>
+    <%= javascript_include_tag 'vendors/tom-select.js' %>
+    <%= javascript_include_tag 'vendors/ckeditor/classic.js' %>
+    <%= javascript_include_tag 'vendors/simplebar.js' %>
+    <%= javascript_include_tag 'vendors/transition.js' %>
+    <%= javascript_include_tag 'vendors/dropdown.js' %>
+    <%= javascript_include_tag 'vendors/popper.js' %>
+    <%= javascript_include_tag 'vendors/modal.js' %>
+    <%= javascript_include_tag 'components/base/theme-color.js' %>
+    <%= javascript_include_tag 'components/base/lucide.js' %>
+    <%= javascript_include_tag 'components/base/tippy.js' %>
+    <%= javascript_include_tag 'components/base/tom-select.js' %>
+    <%= javascript_include_tag 'components/base/classic-editor.js' %>
+    <%= javascript_include_tag 'themes/rubick.js' %>
+    <%= javascript_include_tag 'components/mobile-menu.js' %>
+    <%= javascript_include_tag 'components/themes/rubick/top-bar.js' %>
+
+
+</body>
+</html>
