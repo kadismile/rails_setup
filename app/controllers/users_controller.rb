@@ -8,12 +8,16 @@ class UsersController < ApplicationController
   end
 
   def sign_in
+    if current_user
+      redirect_to root_path
+    end
   end
 
   def create
     sleep(1)
     @user = User.new(user_params)
     if @user.save
+      UserJob.perform_at(2.seconds.from_now,{ "user_id" => @user.id })
       flash.now[:success] = 'Registred Successfuly, kindly logg in'
       redirect_to sign_in_path
     else
@@ -27,8 +31,7 @@ class UsersController < ApplicationController
     user = User.find_by(email: params[:email])
     if user&.authenticate(params[:password])
       session[:user_id] = user.id
-
-      if params[:remember_me]
+      if params[:remember_me].to_i == 1
         user.remember
         cookies.permanent[:remember_token] = user.remember_token
       end

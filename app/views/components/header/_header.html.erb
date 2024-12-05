@@ -241,7 +241,7 @@
         <div data-transition="" data-selector=".show" data-enter="transition-all ease-linear duration-150" data-enter-from="absolute !mt-5 invisible opacity-0 translate-y-1" data-enter-to="!mt-1 visible opacity-100 translate-y-0" data-leave="transition-all ease-linear duration-150" data-leave-from="!mt-1 visible opacity-100 translate-y-0" data-leave-to="absolute !mt-5 invisible opacity-0 translate-y-1" class="dropdown-menu absolute z-[9999] hidden">
             <div data-tw-merge="" class="dropdown-content rounded-md border-transparent p-2 shadow-[0px_3px_10px_#00000017] dark:border-transparent dark:bg-darkmode-600 mt-px w-56 bg-theme-1 text-white">
                 <div class="p-2 font-medium font-normal">
-                    <div class="font-medium">Brad Pitt</div>
+                    <div class="font-medium"> <%= current_user.id%></div>
                     <div class="mt-0.5 text-xs text-white/70 dark:text-slate-500">
                         Backend Engineer
                     </div>
@@ -266,5 +266,4 @@
             </div>
         </div>
     </div>
-    <!-- END: Account Menu -->
 </div>

@@ -5,13 +5,19 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+in development kindly run 
+foreman start -f Procfile.dev
 
-* System dependencies
+* Ruby version 
+    3.3.5
+
+* System dependencies 
+    redis should be running 
 
 * Configuration
 
 * Database creation
+    sqlite or anyother sql will be just fine
 
 * Database initialization
 
