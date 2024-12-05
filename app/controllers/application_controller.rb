@@ -43,7 +43,7 @@ class ApplicationController < ActionController::Base
   
   def authorize_user!
     unless current_user
-      flash[:alert] = 'You need to log in to access this page.'
+      flash[:alert] = 'You need to log in to continue.'
       redirect_to sign_in_path
     end
   end

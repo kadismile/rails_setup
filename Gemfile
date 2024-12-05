@@ -71,3 +71,6 @@ end
 group :development do
   gem "hotwire-livereload"
 end
+
+gem 'dotenv-rails', groups: [:development, :test]
+gem 'sidekiq'

@@ -32,8 +32,7 @@
                             A few more clicks to sign in to your account. Manage all your
                             e-commerce accounts in one place
                         </div>
-                        <%= form_with url: login_path, local: true,  data: 
-                                { controller: 'form' } do |f| %>
+                        <%= form_with url: login_path, local: true,  data: { controller: 'form' } do |f| %>
                             <div class="intro-x mt-8">
                                 <%= f.email_field :email, 
                                     placeholder: 'Email', 
